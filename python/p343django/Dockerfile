@@ -12,4 +12,4 @@ RUN ./configure \
     && make -j$(nproc) \
     && make -j$(nproc) EXTRATESTOPTS='--exclude test_shutil test_socket' test \
     && make altinstall
-pip3.4 install Django
+RUN pip3.4 install Django
