@@ -2,6 +2,8 @@ FROM ubuntu:14.04.2
 MAINTAINER Adnan Issadeen <adnan.issadeen@live.com>
 
 RUN apt-get update && apt-get install wget curl sqlite3 nginx vim -y --force-yes 
+ADD nginxfile /etc/nginx/sites-available/pyapp
+RUN rm /etc/nginx/sites-enabled/default && ln -s /etc/nginx/sites-available/pyapp /etc/nginx/sites-enabled/pyapp
 RUN apt-get update && apt-get -y --force-yes build-dep python3.4
 RUN mkdir /usr/src/python 
 WORKDIR /usr/src/python
