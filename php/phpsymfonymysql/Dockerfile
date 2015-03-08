@@ -2,8 +2,7 @@ FROM ubuntu:14.04.2
 MAINTAINER Adnan Issadeen <adnan.issadeen@live.com>
 
 RUN apt-get update && apt-get install wget curl sqlite3 nginx vim -y --force-yes 
-RUN apt-get install mysql-server
-RUN apt-get update && apt-get install php5 php5-cli php5-fpm php5-curl php5-common php5-gd php5-mysql
+RUN apt-get install mysql-server php5 php5-cli php5-fpm php5-curl php5-common php5-gd php5-mysql -y --force-yes
 RUN mkdir /usr/src/symfony
 ADD nginxfile /etc/nginx/sites-available/phpapp
 RUN rm /etc/nginx/sites-enabled/defaults && ln -s /etc/nginx/sites-available/phpapp /etc/nginx/sites-enabled/phpapp
