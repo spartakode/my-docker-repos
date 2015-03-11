@@ -12,4 +12,4 @@ RUN ./configure \
     && make -j$(nproc) \
     && make -j$(nproc) EXTRATESTOPTS='--exclude test_shutil test_socket' test \
     && make altinstall
-RUN pip3.4 install bcrypt Flask
+RUN pip3.4 install bcrypt Flask pystache
