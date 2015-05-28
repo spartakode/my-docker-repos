@@ -14,4 +14,4 @@ RUN ./configure \
     && make -j$(nproc) \
     && make -j$(nproc) EXTRATESTOPTS='--exclude test_shutil test_socket test_urllib2net' test \
     && make altinstall
-RUN pip3.4 install bcrypt Flask markdown html2text
+RUN pip3.4 install bcrypt Flask markdown html2text PyRSS2Gen
