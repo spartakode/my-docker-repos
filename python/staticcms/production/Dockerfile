@@ -12,6 +12,6 @@ RUN wget https://www.python.org/ftp/python/3.4.3/Python-3.4.3.tgz \
 WORKDIR /usr/src/python/Python-3.4.3
 RUN ./configure \
     && make -j$(nproc) \
-    && make -j$(nproc) EXTRATESTOPTS='--exclude test_shutil test_socket test_urllib2net' test \
+    && make -j$(nproc) EXTRATESTOPTS='--exclude test_ssl test_shutil test_socket test_urllib2net' test \
     && make altinstall
 RUN pip3.4 install bcrypt Flask markdown html2text PyRSS2Gen
